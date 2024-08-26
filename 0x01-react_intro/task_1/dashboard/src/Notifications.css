@@ -1,0 +1,7 @@
+.Notification {
+	border: 2px dotted solid red;
+	display: flex;
+	font-size: 1.3rem;
+	justify-content: space-between;
+	padding: 10px;
+}
