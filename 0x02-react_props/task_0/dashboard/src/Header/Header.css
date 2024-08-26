@@ -1,0 +1,13 @@
+header{
+	display: flex;
+	align-items: center;
+	margin: 10px;
+	height: 200px;
+	border-bottom: 5px solid #e0354b;
+	color: #e0354b;
+	font-size: 30px;
+}
+.holberton-logo {
+	width: 200px;
+	height: 100%;
+}
