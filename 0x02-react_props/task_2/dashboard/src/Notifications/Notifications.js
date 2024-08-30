@@ -1,6 +1,7 @@
 import React from "react";
 import './Notifications.css';
 import closeIcon from '../assets/close-icon.png';
+import NotificationItem from "../Notifications/NotificationItem.js";
 import { getLatestNotification } from "../utils/utils.js";
 
 function Notification() {
@@ -11,9 +12,9 @@ function Notification() {
 		<div className="Notification">
 			<p>Here is the list of notifications</p>
 			<ul>
-				<li style={{color: '#6b5c9a'}}>New course available</li>
-				<li style={{color: 'red'}}>New resume available</li>
-				<li dangerouslySetInnerHTML={getLatestNotification()} style={{color: 'red'}}></li>
+				<NotificationItem type="default" value="New course available" />
+				<NotificationItem type="default" value="New resume available" />
+				<NotificationItem type="urgent" html={getLatestNotification()} />
 			</ul>
 			<button 
 			style={{
