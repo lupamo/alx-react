@@ -1,9 +1,15 @@
 import React, { Component } from "react";
-import './Notifications.css';
 import closeIcon from '../assets/close-icon.png';
 import NotificationItem from './NotificationItem'
 import { getLatestNotification } from "../utils/utils.js";
+import { StyleSheet, css } from 'aphrodite';
 
+const styles = StyleSheet.create({
+	body: {
+		border: '2px solid red',
+		padding: '20px'
+	}
+});
 class Notification extends Component {
 	render() {
 		const displayDrawer = true;
@@ -12,7 +18,7 @@ class Notification extends Component {
 		  };
 		return (
 			<>
-				<div className="menuItem">
+				<div className={css(styles.body)}>
 					<p>Your notifications</p>
 					{displayDrawer && (
 					<div className="Notifications">
