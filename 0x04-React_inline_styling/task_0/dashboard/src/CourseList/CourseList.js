@@ -1,10 +1,30 @@
 import React from 'react';
 import CourseListRow from './CourseListRow';
-import './CourseList.css';
+import { StyleSheet, css } from 'aphrodite';
+
+const styles = StyleSheet.create({
+  table: {
+    width: '100%',
+    borderCollapse: 'collapse',
+  },
+  th: {
+    border: '1px solid #ddd',
+    padding: '8px',
+    backgroundColor: '#f4f4f4',
+    textAlign: 'left',
+  },
+  td: {
+    border: '1px solid #ddd',
+    padding: '8px',
+  },
+  trEven: {
+    backgroundColor: '#f9f9f9',
+  },
+});
 
 function CourseList() {
   return (
-    <table id="CourseList" aria-label="Course List">
+    <table className={css(styles.table)} aria-label="Course List">
       <thead>
         <CourseListRow textFirstCell="Available courses" isHeader={true} />
         <CourseListRow textFirstCell="Course name" textSecondCell="Credit" isHeader={true} />

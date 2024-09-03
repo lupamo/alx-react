@@ -1,9 +1,37 @@
 import React from 'react';
+import { StyleSheet, css } from 'aphrodite';
 import PropTypes from 'prop-types';
+
+const styles = StyleSheet.create({
+  notifications: {
+    border: '2px dashed #e1484c',
+    padding: '10px',
+    width: '375px',
+    position: 'absolute',
+    right: '10px',
+    top: '20px',
+    backgroundColor: 'white',
+  },
+  ul: {
+    listStyleType: 'none',
+    padding: '0',
+  },
+  li: {
+    marginBottom: '5px',
+  },
+  default: {
+    color: 'blue',
+  },
+  urgent: {
+    color: 'red',
+  }
+});
 
 function NotificationItem({ type = 'default', html = null, value = '' }) {
 	return (
-		<li data0-notification-type={type} >
+		<li data-notification-type={type}
+    className={css(styles.li, type === 'urgent' ? styles.urgent : styles.default)}    
+    >
 		  {html ? (
 			<span dangerouslySetInnerHTML={html} />
 		  ) : (
