@@ -13,12 +13,12 @@ class App extends Component {
   render() {
     const { isLoggedIn } = this.props;
     return (
-      <div className="App">
-        <div className="App-Header">
+      <div className={css(styles.app)}>
+        <div  className={css(styles.header)}>
           <Header />
           <Notification />
         </div>
-        <div className="App-body">
+        <div className={css(styles.body)}>
           {isLoggedIn ? (
             <BodySectionWithMarginBottom title="Course list">
               <CourseList />
@@ -47,12 +47,32 @@ App.defaultProps = {
   isLoggedIn: true
 };
 
-const bodyStyle = StyleSheet.create({
-
+const styles = StyleSheet.create({
+  app: {
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100vh',
+  },
+  header: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: '10px',
+  },
+  body: {
+    width: '100%',
+    display: 'flex',
+    textAlign: 'center',
+    flexDirection: 'column',
+    marginBottom: '20px',
+  },
+  footer: {
+    backgroundColor: '#e0354b',
+    color: 'white',
+    textAlign: 'center',
+    padding: '10px',
+  },
 });
-const footerStyle = StyleSheet.create({
-
-});
-
 
 export default App;
