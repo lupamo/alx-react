@@ -4,4 +4,4 @@ const getImmutableObject = (object) => {
   return(Map(object));
 }
 
-export default getImmutableObject;
+export default function getImmutableObject;
