@@ -1,3 +1,7 @@
+#!/usr/bin/node
+
+/**  conversion of objects to immutable maps*/
+
 const Immutable = require('immutable');
 
 /** 
