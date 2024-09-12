@@ -1,11 +1,13 @@
-const mutation = require('immutable');
+const Immutable = require('immutable');
 
 /** 
  * function that convertes object parameter to an immutable 
  * map using Map
 **/
 
-export default function getImmutableObject(object) {
-	const mutatedObj =  mutation.Map(object);
+function getImmutableObject(object) {
+	const mutatedObj =  Immutable.Map(object);
 	return(mutatedObj);
 }
+
+module.exports = getImmutableObject;
