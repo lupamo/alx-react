@@ -5,7 +5,7 @@ const mutation = require('immutable');
  * map using Map
 **/
 
-function getImmutableObject(object) {
+export default function getImmutableObject(object) {
 	const mutatedObj =  mutation.Map(object);
 	return(mutatedObj);
 }
